@@ -1,0 +1,589 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.vieawards.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 10 Aug 2021 10:08:56 GMT -->
+<head>
+<meta charset="UTF-8">
+<title>VIA - Vie International Awards</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'index/css/style.css' %}" type="text/css" media="all">
+<link rel="stylesheet" href="{% static 'index/css/horizontalslider.css' %}" type="text/css" media="all">
+<link rel="shortcut icon" type="image/x-icon" href="{% url 'awardapp:index' %}">
+    <link rel="shortcut icon" href="{% static 'about/images/favicon.ico' %}">
+  <script type="text/javascript" src="{% static 'index/code.jquery.com/jquery-1.9.1.js' %}" ></script>
+ <script type="text/javascript" src="{% static 'index/js/lightbox.js' %}"></script>
+
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'about/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/style-responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/vertical-rhythm.min.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/splitting.css' %}">
+
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+  <script type="text/javascript">
+
+    $(window).load(function(){
+
+var view = $("#tslshow");
+var move = "100px";
+var sliderLimit = -750
+
+$("#rightArrow").click(function(){
+
+    var currentPosition = parseInt(view.css("left"));
+    if (currentPosition >= sliderLimit) view.stop(false,true).animate({left:"-="+move},{ duration: 400})
+
+});
+
+$("#leftArrow").click(function(){
+
+    var currentPosition = parseInt(view.css("left"));
+    if (currentPosition < 0) view.stop(false,true).animate({left:"+="+move},{ duration: 400})
+
+});
+
+    });
+
+</script>
+
+    <style>
+        .row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+}
+.modal1 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: black;
+  margin: auto;
+  padding: 0;
+  width: 60%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides1 {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+      .main-nav.dark .inner-nav ul > li > a{
+            color: #C5B358;
+            opacity: .78;
+        }
+        .main-nav.dark .inner-nav ul > li > a:hover,
+        .main-nav.dark .inner-nav ul > li > a.active{
+            color: #C5B358;
+            opacity: 1;
+        }
+        .bg-dark,
+        .bg-dark-lighter,
+        .bg-dark-alfa-30,
+        .bg-dark-alfa-50,
+        .bg-dark-alfa-70,
+        .bg-dark-alfa-90,
+        .bg-dark-alfa,
+        .bg-color,
+        .bg-color-lighter,
+        .bg-color-alfa-30,
+        .bg-color-alfa-50,
+        .bg-color-alfa-70,
+        .bg-color-alfa-90,
+        .bg-color-alfa{
+            color: #C5B358;
+        }
+
+        .light-content .call-action-1-decription{
+            color: #C5B358;
+            opacity: .72;
+            font-weight: 400;
+        }
+        .light-content .footer-copy{
+            color: #C5B358;
+        }
+        .light-content{
+    color: #C5B358;
+    }
+        .bg-dark-lighter.light-content{
+          background-color: black !important;
+}
+.main-nav.dark .mobile-nav:hover,
+.main-nav.dark .mobile-nav.active{
+    color: #C5B358;
+}
+.main-nav.dark .mobile-nav{
+    background-color: transparent;
+    border-color: transparent;
+    color: #C5B358;
+}
+.bg-dark.light-content{
+    background-color: black !important;
+}
+.bg-dark-lighter.light-content{
+    background-color: black !important;
+}
+
+.light-content .ci-icon:before{
+    background-color: #C5B358;
+}
+.light-content .ci-title{
+    color: #C5B358;
+}
+.light-content .ci-text{
+    color: #C5B358;
+}
+.light-content .ci-link a{
+    color: #C5B358;
+}
+.light-content .form-tip{
+    color: #C5B358;
+}
+
+.btn-mod.btn-w{
+
+    background: #C5B358;
+}
+.btn-mod.btn-w:hover,
+.btn-mod.btn-w:focus{
+
+    background: #C5B358;
+    box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+    </style>
+
+</head>
+
+
+
+<!--<section>-->
+
+
+<!--<div class="inner">-->
+<body style="background-color:black;">
+<div class="header">
+    <nav class="main-nav dark transparent sticky wow-menubar" style="background-color:black;">
+        <div class="full-wrapper relative clearfix" style="background-color:black;">
+
+            <!-- Logo ( * your text or image into link tag *) -->
+            <div class="nav-logo-wrap local-scroll">
+                <a href="{% url 'awardapp:index' %}" class="logo">
+                    <img src="{% static 'about/images/logo.png' %}" alt="Company logo"/>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="mobile-nav" role="button" tabindex="0">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Menu</span>
+            </div>
+
+            <!-- Mobile Cart -->
+            <!-- Main Menu -->
+            <div class="inner-nav desktop-nav">
+                <ul class="clearlist">
+                    <li>
+                        <a href="{% url 'awardapp:index' %}" class="mn-has-sub active">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'awardapp:about' %}" class="mn-has-sub ">About</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'awardapp:gallery' %}" class="mn-has-sub">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'awardapp:calendar' %}" class="mn-has-sub">Calendar</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'awardapp:contact' %}" class="mn-has-sub">Contact</a>
+                    </li>
+                    <!-- End Item With Sub -->
+                </ul>
+            </div>
+            <!-- End Main Menu -->
+        </div>
+    </nav>
+</div>
+
+
+
+
+
+
+<!--</section>-->
+<img class="sliderimg" src="{% static 'index/img/slider.jpg' %}">
+
+<section class="comingsoon" style="background-image: url({% static 'index/img/comingsoon-bg.jpg' %});">
+
+</section>
+<div class="spacer"></div>
+
+<!--<div class="team-head"><span style="background-color: black"><b> OUR TEAM </b></span></div>-->
+
+<!--<div class="spacer"></div>-->
+<!--<section style="padding-left: 10%;padding-right: 10%;">-->
+<!--        <div class="teamformob">-->
+
+<!--            <div class="teammember">-->
+<!--            <img src="img/team/team1.jpg" width="70%">-->
+<!--            <div class="name">Mr. Jude & Felix</div>-->
+<!--              <div class="designation">Show Director/ Choreographer</div>-->
+<!--              <div class="designation">-->
+<!--                  Show Director - VFW 2017 INDIA.<br>-->
+<!--                  Madura Garments Trade Show 2017.<br>-->
+<!--                  Indian Fashion League 2017.<br>-->
+<!--                  Miss Millenial by Malayalamanorama 2017.<br>-->
+<!--                  IIFT Bangaloru 2017.-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="teammember">-->
+<!--            <img src="img/team/team2.jpg" width="70%">-->
+<!--            <div class="name">Mr. Darren Aurelius Imossi</div>-->
+<!--              <div class="designation">Imossi Model Management </div>-->
+<!--              <div class="designation">-->
+<!--                  International Beauty Pageant  Judge-->
+<!--                  VFW 2017 India.<br>-->
+<!--                  London Fashion Week<br>-->
+<!--                  Paris Fashion Week<br>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="teammember">-->
+<!--            <img src="img/team/team3.jpg" width="70%">-->
+<!--            <div class="name">Mr. Jaimal Mistry</div>-->
+<!--              <div class="designation">Show Director/ Choreographer</div>-->
+<!--              <div class="designation">-->
+<!--                  VFW 2017 INDIA<br>-->
+<!--                  Miss India Uk <br>-->
+<!--                  Asian Women Awards<br>-->
+<!--                  B4U Inspiration Couture Show<br>-->
+<!--                  Wed Asia Bridal Shows<br>-->
+<!--                  House of Asia Catwalk show<br>-->
+<!--                  Alexander Mcqueen Show<br>-->
+<!--                  Asian Beauty Show-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="teammember">-->
+<!--            <img src="img/team/team4.jpg" width="70%">-->
+<!--            <div class="name">Akhil & Aiswarya</div>-->
+<!--              <div class="designation">Founder & Director - Vie Fashion Week </div>-->
+<!--              <div class="designation">-->
+<!--                  A Square London - The Fashion House .<br>-->
+<!--                  First couple to do an Ancient Mural Painting-->
+<!--on Western collections index London.<br>-->
+<!--                  Fashion Reality show judges.-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--	  <div class="bstimeslider">-->
+<!--    <div id="rightArrow"></div>-->
+<!--    <div id="viewContainer">-->
+<!--        <div id="tslshow">-->
+<!--            <div class="bktibx">-->
+<!--            	<img src="img/team/team1.jpg" width="70%">-->
+<!--            	<div class="name">Mr. Jude & Felix</div>-->
+<!--            	<div class="designation">Show Director/ Choreographer</div>-->
+<!--              <div class="designation">-->
+<!--                  Show Director - VFW 2017 INDIA-->
+<!--                  Madura Garments Trade Show 2017-->
+<!--                  Indian Fashion League 2017-->
+<!--                  Miss Millenial by Malayalamanorama 2017-->
+<!--                  IIFT Bangaloru 2017-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="bktibx">-->
+<!--            	<img src="img/team/team2.jpg" width="70%">-->
+<!--            	<div class="name">Mr. Darren Aurelius Imossi</div>-->
+<!--            	<div class="designation">Imossi Model Management </div>-->
+<!--              <div class="designation">-->
+<!--                  International Beauty Pageant  Judge-->
+<!--                  VFW 2017 India.<br>-->
+<!--                  London Fashion Week<br>-->
+<!--                  Paris Fashion Week<br>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="bktibx">-->
+<!--            	<img src="img/team/team3.jpg" width="70%">-->
+<!--            	<div class="name">Mr. Jaimal Mistry</div>-->
+<!--            	<div class="designation">Show Director/ Choreographer</div>-->
+<!--              <div class="designation">-->
+<!--                  VFW 2017 INDIA<br>-->
+<!--                  Miss India Uk <br>-->
+<!--                  Asian Women Awards<br>-->
+<!--                  B4U Inspiration Couture Show<br>-->
+<!--                  Wed Asia Bridal Shows<br>-->
+<!--                  House of Asia Catwalk show<br>-->
+<!--                  Alexander Mcqueen Show<br>-->
+<!--                  Asian Beauty Show-->
+
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="bktibx">-->
+<!--            	<img src="img/team/team4.jpg" width="70%">-->
+<!--            	<div class="name">Akhil & Aiswarya</div>-->
+<!--            	<div class="designation">Founder & Director - Vie Fashion Week </div>-->
+<!--              <div class="designation">-->
+<!--                  A Square London - The Fashion House .<br>-->
+<!--                  First couple to do an Ancient Mural Painting-->
+<!--on Western collections index London.<br>-->
+<!--                  Fashion Reality show judges.-->
+<!--              </div>-->
+<!--            </div>-->
+
+
+<!--         </div>-->
+<!--    </div>-->
+<!--    <div id="leftArrow"><img src=""></div>-->
+<!--</div>-->
+
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "yfqyq9a9"
+      }], "*")
+    }
+  </script>
+</section>
+
+
+
+<section class="sponsor-scroll" >
+  <div class="spacer"></div>
+    <div class="sponsor-head"><span><b>SPONSORS & ASSOCIATIONS </b></span></div>
+    <div class="spacer"></div>
+	<marquee behavior="scroll" direction="left" scrollamount="10">
+    <img class="sponsor-img" src="{% static 'index/img/logos/logo-7.png' %}">
+    <img class="sponsor-img" src="{% static 'index/img/logos/logo-2.png' %}">
+    <img class="sponsor-img" src="{% static 'index/img/logos/logo-3.png' %}">
+    <img class="sponsor-img" src="{% static 'index/img/logos/logo-4.png' %}">
+    <img class="sponsor-img" src="{% static 'index/img/logos/logo-5.png' %}">
+    <img class="sponsor-img" src="{% static 'index/img/logos/logo-6.png' %}">
+    <img class="sponsor-img" src="{% static 'index/img/logos/logo-15.png' %}">
+
+	</marquee>
+  <div class="spacer"></div>
+</section>
+<section class="sponsor2" >
+  <div class="col-md-12">
+        <img width="100%" style="padding-left: 0%;" src="{% static 'index/img/logos/sponsorsbar.png' %}">
+  </div>
+<div class="spacer"></div>
+</section>
+<div class="spacer"></div>
+
+
+
+            <!-- Footer -->
+            <footer class="page-section bg-dark-lighter light-content footer pb-100 pb-sm-50" >
+<!--                <div class="container">-->
+
+
+                       <img src="{% static 'about/images/logo.png' %}" alt="" width="50px" height="50px">
+
+
+                        <!-- Copyright -->
+                        <div class="footer-copy">
+                            Privacy Policy. © All Rights Reserverd 2021.
+                        </div>
+                        <!-- End Copyright -->
+            </footer>
+
+</body>
+
+<!-- JS -->
+<script src="{% static 'about/js/jquery-3.5.1.min.js' %}"></script>
+<script src="{% static 'about/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'about/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'about/js/SmoothScroll.js' %}"></script>
+<script src="{% static 'about/js/jquery.scrollTo.min.js' %}"></script>
+<script src="{% static 'about/js/jquery.localScroll.min.js' %}"></script>
+<script src="{% static 'about/js/jquery.viewport.mini.js' %}"></script>
+<script src="{% static 'about/js/jquery.countTo.js' %}"></script>
+<script src="{% static 'about/js/jquery.appear.js' %}"></script>
+<script src="{% static 'about/js/jquery.parallax-1.1.3.js' %}"></script>
+<script src="{% static 'about/js/jquery.fitvids.js' %}"></script>
+<script src="{% static 'about/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'about/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'about/js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'about/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'about/js/masonry.pkgd.min.js' %}"></script>
+<script src="{% static 'about/js/jquery.lazyload.min.js' %}"></script>
+<script src="{% static 'about/js/wow.min.js' %}"></script>
+<script src="{% static 'about/js/morphext.js' %}"></script>
+<script src="{% static 'about/js/typed.min.js' %}"></script>
+<script src="{% static 'about/js/all.js' %}"></script>
+<script src="{% static 'about/js/contact-form.js' %}"></script>
+<script src="{% static 'about/js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'about/js/objectFitPolyfill.min.js' %}"></script>
+<script src="{% static 'about/js/splitting.min.js' %}"></script>
+
+
+<script>
+function hidemenu() {
+    document.getElementById("menu-close").style.display = "none";
+    document.getElementById("nav-menu").style.display = "none";
+    document.getElementById("menu-icon").style.display = "block";
+    document.getElementById("menu-icon").style.visibility = "visible";
+}
+
+function displaymenu() {
+	document.getElementById("menu-close").style.display = "block";
+    document.getElementById("menu-close").style.visibility = "visible";
+    document.getElementById("nav-menu").style.display = "block";
+    document.getElementById("nav-menu").style.visibility = "visible";
+    document.getElementById("menu-icon").style.display = "none";
+}
+
+</script>
+
+
+
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'sg3plcpnl0092'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>
+<!-- Mirrored from www.vieawards.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 10 Aug 2021 10:09:36 GMT -->
+</html>
